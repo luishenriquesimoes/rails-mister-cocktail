@@ -1,0 +1,13 @@
+<h1>Welcome to Mr. Cocktail, your drink assistant</h1>
+
+<% unless @cocktails.empty? %>
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>Tragedy! You have no cocktails recipes till now! Let's create one!</h3>
+<% end %>
+
+<%= link_to 'Create a new cocktail', new_cocktail_path %>

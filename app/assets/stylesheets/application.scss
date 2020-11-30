@@ -11,3 +11,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "cocktails";
+@import "doses";
+
+.navbar {
+  list-style-type: none;
+  background-color: $yellow;
+
+  li {
+    font-weight: 700;
+  }
+}
+
+.robot {
+  font-family: $logo-font !important;
+}

@@ -1,13 +1,29 @@
-<h1>Welcome to Mr. Cocktail, your drink assistant</h1>
+<div class="jumbotron jumbotron-fluid bg-success text-light">
+  <div class="container">
+    <h1 class="display-3 robot">Mr. Cocktails</h1>
+    <h3 class="lead headings-font-family">Your juiciest robot</h3>
+  </div>
+</div>
 
 <% unless @cocktails.empty? %>
   <ul>
     <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+      <li>
+        <div class="card d-flex" style="width: 18rem;">
+          <div class="card-img-top"><%= image_tag "drink.jpg", alt: "cocktail-image", width: 200 %></div>
+          <div class="card-body">
+            <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          </div>
+        </div>
+      </li>
     <% end %>
   </ul>
 <% else %>
-  <h3>Tragedy! You have no cocktails recipes till now! Let's create one!</h3>
+  <div class="jumbotron jumbotron-fluid bg-danger text-light">
+    <div class="container">
+      <h3 class="lead">Tragedy! You have no cocktails recipes till now! Let's create one!</h3>
+    </div>
+  </div>
 <% end %>
 
-<%= link_to 'Create a new cocktail', new_cocktail_path %>
+<div class="btn btn-success ml-4" ><%= link_to 'Create a new cocktail', new_cocktail_path %></div>

@@ -15,7 +15,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
 
     if @cocktail.save
-      redirect_to cocktail_path, notice: 'Cocktail was successfully created'
+      redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully created'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class CocktailsController < ApplicationController
 
   def update
     if @cocktail.update(cocktail_params)
-      redirect_to cocktail_path, notice: 'Cocktail was successfully updated'
+      redirect_to cocktail_path(@cocktail), notice: 'Cocktail was successfully updated'
     else
       render :edit
     end

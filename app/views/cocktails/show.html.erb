@@ -1,7 +1,7 @@
 <h1><%= @cocktail.name %></h1>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient %>: <%= dose.description %></li>
+    <li><%= dose.ingredient.name %>: <%= dose.description %></li>
     <%= link_to "Edit", edit_cocktail_dose_path(@cocktail, dose) %>
     <%= link_to "Remove",
                 dose_path(dose),

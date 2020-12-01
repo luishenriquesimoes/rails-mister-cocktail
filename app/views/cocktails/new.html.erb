@@ -1,7 +1,9 @@
-<h1>New Cocktail</h1>
+<div class="container col-sm-6 text-center">
+  <h1 class="form-header text-center">New Cocktail</h1>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create cocktail" %>
-<% end %>
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name, label: false, placeholder: "Name of your cocktail" %>
+    <%= f.input :photo, as: :file, label: false %>
+    <%= f.submit "Create cocktail", { class: "text-center" } %>
+  <% end %>
+</div>

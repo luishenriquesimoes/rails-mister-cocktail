@@ -11,10 +11,19 @@
   </head>
 
   <body>
-    <ul class="navbar">
-      <li><%= link_to "Mr. Cocktails Robot", cocktails_path %></li>
-      <li><%= link_to "Create your cocktail", new_cocktail_path %></li>
+    <ul class="navbar-lewagon">
+      <li><%= link_to "Mr. Cocktails Robot", cocktails_path, { class: 'robot' } %></li>
+      <li><%= link_to "Create your cocktail", new_cocktail_path, { class: 'mono create-button-nav' } %></li>
     </ul>
     <%= yield %>
+    <div class="footer fixed-bottom">
+      <div class="footer-links">
+        <a href="https://www.google.com/search?q=drunk+homer+simpson&sxsrf=ALeKk002pSvtMXHXS0hnMcNff7P1yjU7kQ:1606860416423&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjH78vC5a3tAhXYGbkGHVbOArgQ_AUoAXoECA8QAw&biw=1366&bih=600#imgrc=CXVynXZgrd2hVM" target="_blank">“Here's to alcohol: the cause of, and solution to, all of life's problems.”</a>
+      </div>
+      <div class="footer-copyright">
+        This robot was made with <i class="fas fa-cocktail"></i> by Luís H. Simões
+      </div>
+    </div>
+
   </body>
 </html>

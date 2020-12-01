@@ -1,0 +1,27 @@
+.footer {
+  background: $black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0px 16px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-family: $headers-font;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.15;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-cocktail {
+  color: $red;
+}

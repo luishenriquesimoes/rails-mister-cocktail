@@ -1,6 +1,24 @@
-.alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+.flash {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $blue;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 16px;
 }
+
+.flash-success {
+  border: 2px solid $blue;
+}
+
+.flash-warning {
+  border: 2px solid $yellow;
+}
+
+.flash-danger {
+  border: 2px solid $marsala;
+}
+

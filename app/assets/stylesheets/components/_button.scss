@@ -1,0 +1,40 @@
+.create-button-nav {
+  background-color: $blue;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 4px;
+  &:hover {
+    text-decoration: none;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    color: white;
+  }
+}
+
+.create-button-grid {
+  padding: 8px;
+  border: 1px solid $black;
+  border-radius: 4px;
+  background-color: $blue;
+  color: white;
+  font-family: $headers-font;
+  margin: 0 0 0 16px;
+  &:hover {
+    text-decoration: none;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    color: white;
+  }
+}
+
+.dose-button {
+  padding: 8px;
+  border: 1px solid $marsala;
+  border-radius: 4px;
+  background-color: white;
+  color: $dark-red;
+  font-family: $headers-font;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
+}

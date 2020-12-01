@@ -1,20 +1,32 @@
-<h1><%= @cocktail.name %></h1>
-<%= cl_image_tag @cocktail.photo.key, alt: "cocktail-image", width: 600, height: 800, crop: :fill %>
+<div class="show-grid">
+  <div class="main-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, crop: :fill %>')">
+    <div class="main-card-text">
+      <%= @cocktail.name %>
+      <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_cocktail_path(@cocktail) %>
+      <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
+                  cocktail_path(@cocktail),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %>: <%= dose.description %></li>
-    <%= link_to "Edit", edit_cocktail_dose_path(@cocktail, dose) %>
-    <%= link_to "Remove",
-                dose_path(dose),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-  <% end %>
-</ul>
+  <div class="card doses-card">
+    <div class="card-body d-flex flex-column">
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li class="card-text">
+            <%= dose.ingredient.name %>: <%= dose.description %>
+            <%= link_to '<i class="fas fa-pen"></i>'.html_safe, edit_cocktail_dose_path(@cocktail, dose) %>
+            <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
+                        dose_path(dose),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+            <% end %>
+          </li>
+      </ul>
+      <%= link_to "Add dose to this cocktail", new_cocktail_dose_path(@cocktail), { class: "dose-button mt-auto"} %>
+    </div>
 
-<%= link_to "Add dose to this cocktail", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Edit cocktail name", edit_cocktail_path(@cocktail) %>
-<%= link_to "Delete this cocktail",
-            cocktail_path(@cocktail),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+
+  </div>
+</div>
